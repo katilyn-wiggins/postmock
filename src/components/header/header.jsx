@@ -1,8 +1,9 @@
 import React from 'react'; 
+import Styles from '../../index.css'
 
 const Header = () => {
     return(
-    <header className="header">
+    <header className={Styles.siteHeader}>
         <h1>PostMock</h1>
     </header>
     )
