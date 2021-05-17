@@ -14,16 +14,22 @@ const Controls = ({ apiUrl, onSubmit, onApiUrlChange, jsonInput, onJsonInputChan
             onChange={onApiUrlChange}
             aria-label="api-search"
             />
-        <table className={Styles.table}>
-        <tbody>
-            <tr>
-                <td><label className={Styles.label}><input className={Styles.radio} type='radio' name="crud-buttons" value="get" onChange={onRadioCheck}/>GET</label></td>
-                <td><label className={Styles.label}><input className={Styles.radio} type='radio' name="crud-buttons" value="put" onChange={onRadioCheck}/>PUT</label></td>
-                <td><label className={Styles.label}><input className={Styles.radio} type='radio' name="crud-buttons" value="post" onChange={onRadioCheck}/>POST</label></td>
-                <td><label className={Styles.label}><input className={Styles.radio} type='radio' name="crud-buttons" value="delete" onChange={onRadioCheck}/>DELETE</label></td>
-            </tr>
-         </tbody>
-         </table>
+
+      <div className={Styles.radiobar}>
+            
+            <input id="get" type='radio' name="crud-buttons" value="get" onChange={onRadioCheck}/>
+            <label htmlFor="get">GET</label>
+
+            <input id="put" type='radio' name="crud-buttons" value="put" onChange={onRadioCheck}/>
+            <label htmlFor="put">PUT</label>
+
+            <input id="post" type='radio' name="crud-buttons" value="post" onChange={onRadioCheck}/>
+            <label htmlFor="post">POST</label>
+
+            <input id="delete" type='radio' name="crud-buttons" value="delete" onChange={onRadioCheck}/>
+            <label htmlFor="delete">DELETE</label>
+
+        </div>
 
         <button aria-label="submit-url" className={Styles.submitbutton}>Submit</button>
 
