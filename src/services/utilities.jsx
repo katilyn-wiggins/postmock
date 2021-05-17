@@ -6,7 +6,7 @@ export const fetchRequestByMethod = async (url, jsonBody, method ) => {
         method: method.toUpperCase(), 
     })
     const results = await res.json();
-    console.log(results, 'json results');
+    // console.log(results, 'json results');
   
     return results;
 
@@ -18,7 +18,7 @@ export const fetchRequestByMethod = async (url, jsonBody, method ) => {
             body: jsonBody,  
         })
         const results = await res.json();
-        console.log(results, 'json results');
+        // console.log(results, 'json results');
       
         return results;
         }

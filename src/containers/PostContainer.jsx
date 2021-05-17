@@ -15,29 +15,39 @@ export default class PostContainer extends Component {
         jsonInput: '', 
         jsonResults: ['results will display here']
     }
+
+    async componentDidMount() {
+        this.setState({
+            loading: false
+        })
+    }
     
     handleUrlChange = ({ target }) => {
-        this.setState({ apiUrl: target.value }, () => (console.log(this.state.apiUrl)))
+        this.setState({ apiUrl: target.value }
+            // , () => (console.log(this.state.apiUrl))
+            )
     }; 
 
     handleRadioChange = async ({ target }) => {
-        this.setState({ radioValue: target.value}, () => console.log(this.state.radioValue));   
+        this.setState({ radioValue: target.value}
+            // , () => console.log(this.state.radioValue)
+            );   
     }
 
     handleJsonInputChange = async ({ target }) => {
         this.setState({ jsonInput: target.value})
-        console.log(this.state.jsonInput);
+        // console.log(this.state.jsonInput);
     }
 
     handleSubmit = async (e) => {
         e.preventDefault(); 
         this.setState({ loading: true }); 
 
-        console.log('on submit', 
-         this.state.jsonInput,
-         this.state.apiUrl, 
-         this.state.radioValue
-        )
+        // console.log('on submit', 
+        //  this.state.jsonInput,
+        //  this.state.apiUrl, 
+        //  this.state.radioValue
+        // )
 
         const jsonResults = await fetchRequestByMethod(
             this.state.apiUrl, 
@@ -52,6 +62,9 @@ export default class PostContainer extends Component {
     };
 
     render() {
+
+        if (this.state.loading) return <h1>Loading...</h1>
+
         return (
             <div className={Styles.gridcontainer}>
                 <Header />
