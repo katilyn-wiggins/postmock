@@ -15,7 +15,8 @@ export const fetchRequestByMethod = async (url, jsonBody, method ) => {
           await fetch(url
         , {
             method: method.toUpperCase(),
-            body: jsonBody,  
+            headers: { 'Content-Type': 'Application/JSON' },
+            body: JSON.stringify(jsonBody),  
         })
         const results = await res.json();
         // console.log(results, 'json results');
