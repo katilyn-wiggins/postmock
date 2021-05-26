@@ -1,9 +1,9 @@
 export const fetchRequestByMethod = async (url, jsonBody, method ) => {
-    if( method.toUpperCase() === 'GET' || 'DELETE') {
+    if( method.toUpperCase() === 'GET' || method.toUpperCase() === 'DELETE') {
     const res =  
       await fetch(url
     , {
-        method: method.toUpperCase(), 
+        method: method.toUpperCase()
     })
     const results = await res.json();
     // console.log(results, 'json results');
